@@ -16,6 +16,16 @@
       color: white;
       padding: 2rem;
       text-align: center;
+      align-items: center;
+    }
+    .color-box {
+      background-color: #f9fafb;
+      color: #0f172a;
+      padding: 15px;
+      border-radius: 5px;
+      display: inline-block;
+      font-size: 1.2em;
+      font-weight: bold;
     }
     header h1 {
       margin-bottom: 0.5rem;
@@ -27,45 +37,20 @@
       line-height: 1.5;
       color: #c7d2fe;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      background: #111827;
-      padding: 0.75rem;
-      flex-wrap: wrap;
-    }
-    nav button {
-      background: none;
-      border: none;
-      color: #e5e7eb;
-      font-size: 0.95rem;
-      cursor: pointer;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-    }
-    nav button.active {
-      background: #2563eb;
-      color: white;
-    }
-    nav button:hover {
-      background: #1d4ed8;
-      color: white;
-    }
+
     main {
       max-width: 1100px;
       margin: 2rem auto;
       padding: 0 1.5rem 3rem;
     }
     section {
-      display: none;
       background: white;
       padding: 2rem;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.06);
     }
-    section.active {
-      display: block;
+    .section1, .section2, .section3 {
+      width: 50%; /* Optional: Defines the width for each section */
     }
     h2 {
       margin-top: 0;
@@ -105,102 +90,60 @@
       font-size: 0.85rem;
       color: #6b7280;
     }
+    img {
+      width: 150px; /* Adjust width as needed */
+      height: auto; /* Maintain aspect ratio */
+      margin-right: auto; /* Space between logo and title */
+      margin-left: auto;
+      border:1px solid #000000
+    }
+    .circle-img {
+      width: 200px;  /* Set a fixed width */
+      height: 200px; /* Set an equal height to ensure a perfect circle */
+      border-radius: 50%; /* Rounds the corners into a circle */
+      object-fit: cover; /* Ensures the image covers the container without stretching */
+    }
+    .container {
+      display: flex; /* Makes child elements sit side-by-side */
+      justify-content: space-between; /* Optional: Distributes space evenly */
+    }
+  }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Jonathan Evan Ash</h1>
-  <strong>Computational Chemist & Machine Learning Scientist</strong>
-  <p>
-    Specializing in deep learning for protein interaction prediction, therapeutic screening,
-    and drug design. Focused on scalable, generalizable ML workflows integrated with
-    HPC-enabled drug discovery pipelines.
-  </p>
+  <div class="color-box">
+    <img class=circle-img src="jonathan.jpeg" alt="Portrait"><br>
+    <strong>Computational Chemist & Machine Learning Scientist</strong>
+    <p style="color: #0f172a;">
+      <strong>jonathan.evan.ash@gmail.com · New Brunswick, NJ, 08901</strong>
+    </p>
+    <p style="color: #0f172a;">
+      <strong><a href="https://www.linkedin.com/in/jonathan-evan-ash">LinkedIn</a> · <a href="https://github.com/JonathanEAsh">GitHub</a> · <a href="jea_cv.pdf">CV</a></strong> 
+    </p>
+  </div>
 </header>
 
-<nav>
-  <button class="active" onclick="showTab('about')">Overview</button>
-  <button onclick="showTab('research')">Research Experience</button>
-  <button onclick="showTab('publications')">Publications</button>
-  <button onclick="showTab('skills')">Skills</button>
-  <button onclick="showTab('education')">Education</button>
-  <button onclick="showTab('academic')">Academic Service</button>
-  <button onclick="showTab('conferences')">Conferences</button>
-  <button onclick="showTab('honors')">Honors & Awards</button>
-</nav>
+
 
 <main>
 
-<section id="about" class="active">
+<section>
   <h2>Overview</h2>
   <p>
-    I am a computational chemist and machine learning scientist with extensive experience
-    developing predictive and generative deep learning models for protein binding prediction
-    and design. My work spans variant effect forecasting, functional sequence space exploration,
-    and de novo binder optimization across therapeutically relevant systems.
+   I am a computational chemist and machine learning scientist specializing in developing deep learning models for protein interaction prediction, therapeutic screening, and drug discovery. I develop predictive and design-oriented ML workflows to support variant effect forecasting, functional sequence space exploration, and binder optimization across therapeutically relevant protein systems. My work emphasizes generalizability, scale, and integration with HPC-enabled drug discovery pipelines.
   </p>
   <p>
-    I routinely integrate ML inference with structure prediction and high-performance computing
-    workflows, enabling large-scale protein design and screening pipelines validated through
-    experimental assays.
+    I completed my undergraduate degree as a double major in Biotechnology and Biomathematics at Rutgers University. I am currently a Ph.D. candidate in the Quantitative Biomedicine program, under the advisorship of Dr. Sagar Khare. I will graduate in <strong>May 2026.</strong>
   </p>
   <p>
-    <strong>Contact:</strong> 732-501-4551 · jonathan.evan.ash@gmail.com · New Brunswick, NJ
-  </p>
-  <p>
-    <strong>Websites: </strong> <a href="https://www.linkedin.com/in/jonathan-evan-ash">LinkedIn</a> · <a href="https://github.com/JonathanEAsh">GitHub</a>
+    I am currently searching for job opportunities involving computational chemistry, ML model development, and drug discovery. <a href="jea_cv.pdf">CV</a>
   </p>
 </section>
-
-<section id="research">
-  <h2>Research Experience</h2>
-
-  <h3>Senior Computational Researcher – Khare Lab, Rutgers University</h3>
-  <div class="meta">2021 – Present</div>
-
-  <h4>Adaptive Protein Design with HPC-Enabled Dynamic Workflows</h4>
-  <ul>
-    <li>Developed a scalable protein binder design pipeline coupling ML model inference and dynamic HPC resource utilization</li>
-    <li>Pipelines are modular with customizable scoring and generation tasks, and can be scaled to large batches of input protein complexes</li>
-    <li>Designs optimized with my protocol exhibited enhanced AlphaFold-predicted quality over baseline metrics (pLDDT +32.8%, pAE -1.3% from control run)</li>
-    <li>Paper published in IPDPS workshop HPAI4S 2025</li>
-  </ul>
-
-  <h4>Variant Effect Forecasting of SARS-CoV-2 RBD Using Deep Learning</h4>
-  <ul>
-    <li>Built highly accurate and generalizable deep learning models for RBD binding prediction across 43,000 unique sequences</li>
-    <li>Discovered ~2000 diverse and functional mutants highly distant from the WT while still retaining binding to ACE2</li>
-    <li>Highlighted limited epistasis in the RBD by using logistic regression to interrogate contribution of pairwise and triplet interactions to variant fitness</li>
-    <li>Manuscript in review at Cell Systems</li>
-  </ul>
-
-  <h4>Predicting Protein Binding Specificity Using Sequence-Based Contrastive Learning</h4>
-  <ul>
-    <li>Built structure-aware graph classifier and sequence-based contrastive learning network to recapitulate PDZ-peptide interactions across 64,000 experimentally derived samples</li>
-    <li>Applied contrastive learning framework to 10 other therapeutically relevant systems (MHC, SH2, WH1, etc)</li>
-    <li>Generated both peptide and PDZ <i>de novo</i> sequence designs using ESM2</li>
-    <li>~10000 designs were screened with the model, then filtered and validated experimentally</li>
-    <li>Manuscript in preparation</li>
-  </ul>
-
-  <h4>PDZ Affinity Clamp Engineering</h4>
-  <ul>
-    <li>Used RFDiffusion and ProteinMPNN to design de novo PDZ-based enhancer domains to improve affinity and specificity towards Alpha Synuclein</li>
-    <li>Validated designs with AlphaFold structural prediction</li>
-    <li>Several clamps were experimentally confirmed to bind using yeast surface display (YSD)</li>
-  </ul>
-
-  <h3>Undergraduate Researcher – Chundawat Lab, Rutgers University</h3>
-  <div class="meta">2018 – 2021</div>
-  <ul>
-    <li>Conducted study of molecular docking techniques to place carbohydrates in complex with candidate CBMs (G. H. Cook Honors Thesis)</li>
-    <li>Performed Acoustic Force Spectroscopy experiments on engineered CBMs for lignocellulosic biofuel applications</li>
-    <li>Fitted Extensible Worm-Like Chain Model to force ramp data obtained from AFS to calculate CBM efficiency</li>
-  </ul>
-</section>
-
-<section id="publications">
+<br>
+<section>
   <h2>Publications</h2>
   <ul>
     <li><strong>Ash, J. E.</strong>, Hadisadegh, N., Khare, S. D. (2026). Prediction and design of protein-peptide binding specificity using deep learning. <em>Manuscript in preparation</em>.</li>
@@ -209,79 +152,8 @@
     <li>Hackl, M., Contrada, E. V., <strong>Ash, J. E.</strong>, et al. (2022). Acoustic force spectroscopy of CBMs. <em>PNAS</em>. <a href="https://doi.org/10.1073/pnas.2117467119">DOI</a></li> 
   </ul>
 </section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="card">
-      <h3>Machine Learning</h3>
-      <ul>
-        <li>PyTorch, PyTorch-Geometric, Scikit-Learn</li>
-        <li>Graph Neural Networks</li>
-        <li>Attention & Contrastive Learning</li>
-        <li>Random Forests, SVMs, KNN</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Computational Biology</h3>
-      <ul>
-        <li>AlphaFold, PyRosetta, Modeller</li>
-        <li>ProteinMPNN, RFDiffusion</li>
-        <li>ESM2, ESM-IF, ESMFold</li>
-        <li>FoldSeek, MMseqs2</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>HPC & Engineering</h3>
-      <ul>
-        <li>Linux, SLURM, Git</li>
-        <li>Shell Scripting</li>
-        <li>RADICAL Toolkit (ENTK, Pilot)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Programming</h3>
-      <ul>
-        <li>Python (Primary)</li>
-        <li>R, Matlab, Java</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <h3>Ph.D. Candidate, Quantitative Biomedicine</h3>
-  <div class="meta">Rutgers University · 2021 – Present</div>
-  <p>Advisor: Sagar Khare</p>
-  <p>GPA: 3.864</p>
-  <p>Thesis: Deep Learning Approaches for Protein Binding Prediction and Design </p>
-  <p>Anticipated Graduation: <strong>May 2026</strong></p>
-
-  <h3>B.S., Biotechnology & Biomathematics</h3>
-  <div class="meta">Rutgers University · 2017 – 2021</div>
-  <p>School of Environmental and Biological Sciences; Honors Program
-  <p>Minor: Mathematics</p>
-  <p>GPA: 3.67</p>
-  <p>Graduated <i>cum laude</i>; Top 5 of Major</p>
-</section>
-
-<section id="academic">
-  <h2>Academic Service & Teaching</h2>
-    <h3>Peer Reviewer</h3>
-    <ul>
-      <li>Randolph, N. Z., Kuhlman, B. (2024) Invariant point message passing for protein side chain packing. <i>Proteins</i></li>
-      <li>Zhao, W., Han, Q., Yang, F., Zhao, Y. (2025) Enhancing enzyme commission number prediction with contrastive learning and agent attention. <i>Proteins</i></li>
-      <li>Chung, D., Park, J., Choi, W. J., Seong, D., Hong, D. (2025) Deciphering Features of Metalloprotease Cleavage Targets Using Protein Structure Prediction. <i>bioRxiv</i></li>
-      <li>Martin-Alonso, C., Alamdari, S., Samad, T. S., Yang, K K., Bhatia, S. N., Amini, A. P. (2025) Deep learning guided design of protease substrates. <i>bioRxiv</i></li>
-    </ul>
-    <h3>Teaching Assistant, General Biology</h3>
-    <ul>
-      <li>Taught core concepts in Biology and lead supplementary office hours as supporting instructor in a course with ~2000 students enrolled</li>
-    </ul>
-</section>
-
-<section id="conferences">
+<br>
+<section>
   <h2>Conferences & Talks</h2>
     <h3>RosettaCommons - Panel Chair and Organizer at Summer RosettaCon</h3>
     <div class="meta">May 2025</div>
@@ -297,31 +169,19 @@
       <li>Poster showcased design protocol alongside preliminary experimental results from YSD assays</li>
     </ul>
 </section>
-
-<section id="honors">
-  <h2>Honors & Awards</h2>
-  <ul>
-    <li>Robert M. Rauch Award – Leadership and Service in Biotechnology (2021).</li>
-    <li>Richard W. Herbert Memorial Scholarship – Academic Excellence (2020).</li>
-    <li>Outstanding Research Writing Project, Rutgers SEBS (2018).</li>
-  </ul>
+<br>
+<section>
+  <h2>Academic Service & Teaching</h2>
+    <h3>Peer Reviewer</h3>
+    <ul>
+      <li>Served as peer reviewer for several machine-learning manuscripts submitted to Proteins and Nature Communications</li>
+    </ul>
+    <h3>Teaching Assistant, General Biology</h3>
+    <ul>
+      <li>Taught core concepts in Biology and lead supplementary office hours as supporting instructor in a course with ~2000 students enrolled</li>
+    </ul>
 </section>
 
-</main>
 
-<footer>
-  © Jonathan Evan Ash · References available upon request
-</footer>
 
-<script>
-  function showTab(id) {
-    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
 
-    document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-  }
-</script>
-
-</body>
-</html>
